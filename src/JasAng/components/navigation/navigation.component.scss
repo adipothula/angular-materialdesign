@@ -1,0 +1,12 @@
+@import 'src/JasAng/scss/jasAng';
+
+jasAng-navigation {
+    display: flex;
+    flex: 1 0 auto;
+
+    #main-navigation {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+}

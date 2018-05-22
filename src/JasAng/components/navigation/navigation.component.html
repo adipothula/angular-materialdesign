@@ -1,0 +1,32 @@
+<div id="main-navigation" class="nav"
+     [ngClass]="{'horizontal':layout === 'horizontal', 'vertical':layout === 'vertical'}">
+
+    <!-- Vertical Navigation Layout -->
+    <ng-container *ngIf="layout === 'vertical'">
+
+        <ng-container *ngFor="let item of navigation">
+
+            <jasAng-nav-vertical-group *ngIf="item.type=='group'" [item]="item"></jasAng-nav-vertical-group>
+            <jasAng-nav-vertical-collapse *ngIf="item.type=='collapse'" [item]="item"></jasAng-nav-vertical-collapse>
+            <jasAng-nav-vertical-item *ngIf="item.type=='item'" [item]="item"></jasAng-nav-vertical-item>
+
+        </ng-container>
+
+    </ng-container>
+    <!-- / Vertical Navigation Layout -->
+
+    <!-- Horizontal Navigation Layout -->
+    <ng-container *ngIf="layout === 'horizontal'">
+
+        <ng-container *ngFor="let item of navigation">
+
+            <jasAng-nav-horizontal-collapse *ngIf="item.type=='group'" [item]="item"></jasAng-nav-horizontal-collapse>
+            <jasAng-nav-horizontal-collapse *ngIf="item.type=='collapse'" [item]="item"></jasAng-nav-horizontal-collapse>
+            <jasAng-nav-horizontal-item *ngIf="item.type=='item'" [item]="item"></jasAng-nav-horizontal-item>
+
+        </ng-container>
+
+    </ng-container>
+    <!-- / Horizontal Navigation Layout -->
+
+</div>

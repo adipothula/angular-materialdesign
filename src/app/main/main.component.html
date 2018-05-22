@@ -1,0 +1,59 @@
+<mat-sidenav-container>
+
+  <div id="jasAng-main-content">
+
+    <!-- TOOLBAR: Above -->
+    <ng-container *ngIf="JasAng.layout.toolbar === 'above'">
+      <jasAng-toolbar class="above" [ngClass]="JasAng.colorClasses.toolbar"></jasAng-toolbar>
+    </ng-container>
+    <!-- / TOOLBAR: Above -->
+
+    <!-- NAVBAR: Top -->
+    <jasAng-navbar layout="horizontal" class="top-navbar" fxHide fxShow.gt-md [ngClass]="JasAng.colorClasses.navbar" *ngIf="JasAng.layout.navigation === 'top'">
+    </jasAng-navbar>
+    <!-- / NAVBAR: Top -->
+
+    <div id="wrapper">
+
+      <!-- NAVBAR: Left -->
+      <jasAng-sidebar [name]="'navbar'" [folded]="JasAng.layout.navigationFolded" [lockedOpen]="'gt-md'" class="left-navbar" [ngClass]="JasAng.colorClasses.navbar"
+        *ngIf="JasAng.layout.navigation === 'left' || JasAng.layout.navigation === 'top'">
+        <jasAng-navbar layout="vertical"></jasAng-navbar>
+      </jasAng-sidebar>
+      <!-- / NAVBAR: Left -->
+
+      <div class="content-wrapper">
+
+        <!-- TOOLBAR: Below -->
+        <ng-container *ngIf="JasAng.layout.toolbar === 'below'">
+          <jasAng-toolbar class="below" [ngClass]="JasAng.colorClasses.toolbar"></jasAng-toolbar>
+        </ng-container>
+        <!-- / TOOLBAR: Below -->
+
+        <jasAng-content></jasAng-content>
+
+        <!-- FOOTER: Below -->
+        <ng-container *ngIf="JasAng.layout.footer === 'below'">
+          <jasAng-footer class="below" [ngClass]="JasAng.colorClasses.footer"></jasAng-footer>
+        </ng-container>
+        <!-- / FOOTER: Below -->
+
+      </div>
+
+      <!-- NAVBAR: Right -->
+      <jasAng-sidebar [name]="'navbar'" [align]="'right'" [folded]="JasAng.layout.navigationFolded" [lockedOpen]="'gt-md'" class="right-navbar"
+        [ngClass]="JasAng.colorClasses.navbar" *ngIf="JasAng.layout.navigation === 'right'">
+        <jasAng-navbar layout="vertical"></jasAng-navbar>
+      </jasAng-sidebar>
+      <!-- / NAVBAR: Right -->
+
+    </div>
+
+    <!-- FOOTER: Above -->
+    <ng-container *ngIf="JasAng.layout.footer === 'above'">
+      <jasAng-footer class="above" [ngClass]="JasAng.colorClasses.footer"></jasAng-footer>
+    </ng-container>
+    <!-- FOOTER: Above -->
+
+  </div>
+</mat-sidenav-container>
